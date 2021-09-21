@@ -3,7 +3,7 @@ create database sbateliers ;
 
 use sbateliers ;
 
-create table client (
+create table Client (
     numero integer not null ,
     civilite varchar(50),
     nom varchar(50),

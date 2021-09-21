@@ -10,7 +10,7 @@ if(isset($_POST['insert'])){
       'sb2021'
     ) ;
 
-    $reponse = $bd->query("SELECT * FROM client");
+    $reponse = $bd->query("SELECT * FROM Client");
     $clients = $reponse->fetchall();
     $last_id = $clients[count($clients) -1]['numero'] +1;
 
@@ -28,21 +28,7 @@ if(isset($_POST['insert'])){
     $telephone = $_POST[ 'numero_de_telephone' ];
 
     // Requête mysql pour insérer des données
-    $sql = "INSERT INTO `client`(`numero`, `civilite`, `nom`, `prenom`, `date_de_naissance`, `adresse_electronique`, `mot_de_passe`, `adresse_postale`, `code_postal`, `ville`, `numero_de_telephone`) VALUES (:numero,:civilite,:nom,:prenom,:date_de_naissance,:adresse_electronique,:mot_de_passe,:adresse_postale,:code_postal,:ville,:numero_de_telephone)";
-    $res = $pdo->prepare($sql);
-    $exec = $res->execute(array(
-      ":numero"=>$numero,
-      "civilite"=>$civilite,
-      ":nom"=>$nom,
-      ":prenom"=>$prenom,
-      ":date_de_naissance"=>$naissance,
-      ":adresse_electronique"=>$mail,
-      ":mot_de_passe"=>$mdp,
-      ":adresse_postale"=>$adresse_postale,
-      ":code_postal"=>$code_postal,
-      ":ville"=>$ville,
-      ":numero_de_telephone"=>$telephone
-    ));
+    $bd->query( " INSERT INTO Client VALUES (`$last_id`,`$civilite`,`$nom`,`$prenom`,`$naissance`,`$mail`,`$mdp`,`$adresse_postale`,`$code_postal`,`$ville`,`$telephone`) " ) ;
 
     // vérifier si la requête d'insertion a réussi
     if($exec){
