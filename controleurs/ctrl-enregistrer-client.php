@@ -14,7 +14,6 @@ if(isset($_POST['insert'])){
     $clients = $reponse->fetchall();
     $last_id = $clients[count($clients) -1]['numero'] +1;
 
-    // récupérer les valeurs 
     $numero = $last_id ;
     $civilite = $_POST[ 'civilite' ];
     $nom = $_POST['nom'];
@@ -27,10 +26,8 @@ if(isset($_POST['insert'])){
     $ville = $_POST[ 'ville' ];
     $telephone = $_POST[ 'numero_de_telephone' ];
 
-    // Requête mysql pour insérer des données
-    $bd->query( " INSERT INTO Client VALUES (`$last_id`,`$civilite`,`$nom`,`$prenom`,`$naissance`,`$mail`,`$mdp`,`$adresse_postale`,`$code_postal`,`$ville`,`$telephone`) " ) ;
+    $bd->query( " INSERT INTO Client VALUES (`$numero`,`$civilite`,`$nom`,`$prenom`,`$naissance`,`$mail`,`$mdp`,`$adresse_postale`,`$code_postal`,`$ville`,`$telephone`) " ) ;
 
-    // vérifier si la requête d'insertion a réussi
     if($exec){
       header( 'Location: ../vues/vue-connexion.php' ) ;
     }else{
