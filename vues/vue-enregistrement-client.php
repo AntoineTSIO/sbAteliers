@@ -26,8 +26,8 @@
          <tr>
             <td><label for="civilite">Civilité</label></td>
             <td><select id="civilite" name="civilite">
-               <option name="monsieur" value="monsieur" selected>Monsieur</option>
-               <option name="madame" value="madam">Madame</option>
+               <option name="civilite" value="Monsieur" selected>Monsieur</option>
+               <option name="civilite" value="Madame">Madame</option>
          </tr>
 
          <tr>
@@ -42,7 +42,7 @@
 
          <tr>
             <td><label for="mdp"> Mot de Passe :</label></td>
-            <td><input type="password" id="password" name="mdp"></td>
+            <td><input type="password" id="mdp" name="mdp"></td>
          </tr> 
 
          <tr>
@@ -57,7 +57,7 @@
 
          <tr>
             <td><label for="ville">Ville :</label></td>
-            <td><input type="ville" id="ville" name="vile"></td>
+            <td><input type="text" id="ville" name="ville"></td>
          </tr>
 
          <tr>

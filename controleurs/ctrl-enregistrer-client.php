@@ -1,7 +1,5 @@
 <?php
 
-if(isset($_POST['insert'])){
-
   try {
    
     $bd = new PDO(
@@ -10,34 +8,43 @@ if(isset($_POST['insert'])){
       'sb2021'
     ) ;
 
-    $reponse = $bd->query("SELECT * FROM Client");
-    $clients = $reponse->fetchall();
-    $last_id = $clients[count($clients) -1]['numero'] +1;
+  } catch ( Exception $e ){
+    
+    echo "Problème de connexion" ;
+  
+  }
 
-    $numero = $last_id ;
     $civilite = $_POST[ 'civilite' ];
     $nom = $_POST['nom'];
     $prenom = $_POST['prenom'];
-    $naissance = $_POST['date_de_naissance'];
-    $mail = $_POST[ 'adresse_electronique' ];
-    $mdp = $_POST[ 'mot_de_passe' ];
+    $naissance = $_POST['naissance'];
+    $mail = $_POST[ 'mail' ];
+    $mdp = $_POST[ 'mdp' ];
     $adresse_postale = $_POST[ 'adresse_postale' ];
     $code_postal = $_POST[ 'code_postal' ];
     $ville = $_POST[ 'ville' ];
-    $telephone = $_POST[ 'numero_de_telephone' ];
+    echo $ville ;
+    $telephone = $_POST[ 'telephone' ];
 
-    $bd->query( " INSERT INTO Client VALUES (`$numero`,`$civilite`,`$nom`,`$prenom`,`$naissance`,`$mail`,`$mdp`,`$adresse_postale`,`$code_postal`,`$ville`,`$telephone`) " ) ;
-
-    if($exec){
-      header( 'Location: ../vues/vue-connexion.php' ) ;
-    }else{
-      header( 'Location: ../vues/vue-enregistrement-client.php?echec=1' ) ;
+    $dernierNumClient = $bd->query("SELECT MAX(numero) FROM `Client`");
+    $dernierNumClient = $dernierNumClient->fetchall();
+  
+    $nouveauNumClient = $dernierNumClient[0][0]+1;
+ 
+    $mailDejaConnu = $bd->query("SELECT numero from `Client` where adresse_electronique IN('" . $mail . "')");
+    $mailDejaConnu = $mailDejaConnu->fetchall();
+ 
+    if($mailDejaConnu[0][0]==null){
+      $enregistrementClient = $bd->query("INSERT INTO `Client` VALUES(" . $nouveauNumClient . ",'" . $civilite . "', '" 
+                                      . $nom . "','" . $prenom . "','" . $naissance . "','" . $mail . "','" . $mdp . "','" 
+                                      . $adresse_postale . "'," . $code_postal . ",'" . $ville . "','" . $telephone . "')");
+      header('Location: ../');
+    
+    } else {
+    
+      header('Location: ..vues/vue-enregistrement-client.php');
+    
     }
-  }
-  catch( PDOException $e ){
 
-		header( 'Location: ../vues/vue-enregistrement-client.php?echec=0' ) ;
 
-	}
-}
 ?>

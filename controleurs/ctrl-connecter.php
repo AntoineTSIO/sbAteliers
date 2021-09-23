@@ -13,7 +13,7 @@
 			) ;
 			
 		$sql = 'select numero , nom , prenom '
-			 . 'from client '
+			 . 'from Client '
 			 . 'where adresse_electronique = :email '
 			 . 'and mot_de_passe = :mdp' ;
 			 
