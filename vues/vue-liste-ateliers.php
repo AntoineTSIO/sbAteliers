@@ -32,7 +32,7 @@
             <a class="navbar-text" href="../controleurs/ctrl-deconnecter.php">
                 <h5>Déconnexion</h5>
             </a>
-            <a class="navbar-brand" href="../index.php">
+            <a class="navbar-brand mx-auto" href="../index.php">
                 <h3>Sanaya Bio Ateliers</h3>
             </a>
             <a class="navbar-text" href="/sbateliers/vues/vue-consultation-profil.php">
