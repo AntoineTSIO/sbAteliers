@@ -2,17 +2,17 @@
 <html lang="fr">
 
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<link href="/sbateliers/style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <meta charset="utf-8">
 	<title>Sanaya Bio Ateliers - Connexion</title>
 </head>
 
 <body>
 
-<div class="mx-center col-sm text-center">
-    <h1>Se Connecter</h1>
-
+<div class="col-sm">
+    <h1 class="text-center">Se Connecter</h1>
+    <div class="d-grid gap-2 col-6 mx-auto">
     <form name="Formulaire" action="../controleurs/ctrl-connecter.php" method="post" onSubmit="return verification()" >
         <div class="form-group">
             <label for="mail">Adresse Electronqiue :</label>

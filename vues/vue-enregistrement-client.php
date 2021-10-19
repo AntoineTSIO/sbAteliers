@@ -8,7 +8,9 @@
 </head>
 
 <body>
-	<h1>S'enregistrer</h1>
+<div class="col-sm">
+    <h1 class="text-center">S'enregistrer</h1>
+    <div class="d-grid gap-2 col-6 mx-auto">
 
 	<form name="Formulaire" action="../controleurs/ctrl-enregistrer-client.php" method="post" onSubmit="return verification()" >
  

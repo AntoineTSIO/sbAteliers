@@ -15,7 +15,9 @@
         <a href="/sbateliers/vues/vue-connexion.php" class="btn btn-info">Connexion</a>
         <a href="/sbateliers/vues/vue-enregistrement-client.php" class="btn btn-info">S'enregistrer</a>
     </div>
-</div>    
+</div>
+
+
 
 </body>
 
