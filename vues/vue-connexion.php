@@ -20,10 +20,11 @@
       <p class="subtitle">
           Se Connecter
       </p>
-      <div class="field">
+      <form name="Formulaire" action="../controleurs/ctrl-connecter.php" method="post" onSubmit="return verification()" >
+        <div class="field">
         <label for="mail">Adresse Electronique :</label>
         <p class="control has-icons-left has-icons-right">
-            <input class="input" type="email" placeholder="mail@example.com">
+            <input class="input" type="email" id="mail" name="mail"placeholder="mail@example.com">
             <span class="icon is-small is-left">
                 <i class="fas fa-envelope"></i>
             </span>
@@ -35,12 +36,13 @@
       <div class="field">
         <label for="mdp">Mot de Passe :</label>
         <p class="control has-icons-left">
-            <input class="input" type="password">
+            <input class="input" type="password" id="mdp" name="mdp">
             <span class="icon is-small is-left">
                 <i class="fas fa-lock"></i>
             </span>
         </p>
-      </div>
+        </div>
+      </form>
     </div>
   </div>
 </section>
