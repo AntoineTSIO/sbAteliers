@@ -41,9 +41,9 @@ create table Atelier (
 
 create table Participation (
     date_inscription date,
+    commentaire varchar(1000),
     client INTEGER,
     atelier INTEGER,
     FOREIGN KEY (atelier) REFERENCES Atelier (numero),
     FOREIGN KEY (client) REFERENCES Client (numero)
 ) ;
-
