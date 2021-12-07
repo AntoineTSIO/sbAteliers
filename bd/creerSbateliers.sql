@@ -39,7 +39,7 @@ create table Atelier (
     FOREIGN KEY (responsable) REFERENCES Responsable_Ateliers (numero)
 ) ;
 
-create table Participation (
+create table Participer (
     date_inscription date,
     commentaire varchar(1000),
     client INTEGER,
