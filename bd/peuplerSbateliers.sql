@@ -20,13 +20,13 @@ INSERT INTO Atelier (numero, responsable, date_enregistrement, date_et_heure_pro
 (2, 2, '2021-10-11', '2021-10-18 09:00:00', '00:45:00', 20, "Explications sur l'initiative de Sanaya Bio"),
 (3, 5, '2021-10-12', '2021-10-19 09:00:00', '01:30:00', 5, "Conception de Parfums");
  
-INSERT INTO Participer (date_inscription, client, atelier) VALUES
-('2021-10-15',1,1),
-('2021-10-15',2,1),
-('2021-10-16',3,2),
-('2021-10-16',4,2),
-('2021-10-17',1,2),
-('2021-10-17',2,3),
-('2021-10-18',3,3),
-('2021-10-18',4,3),
-('2021-10-18',1,3);
+INSERT INTO Participation (date_inscription,commentaire, client, atelier) VALUES
+('2021-10-15','',1,1),
+('2021-10-15','',2,1),
+('2021-10-16','',3,2),
+('2021-10-16','',4,2),
+('2021-10-17','',1,2),
+('2021-10-17','',2,3),
+('2021-10-18','',3,3),
+('2021-10-18','',4,3),
+('2021-10-18','',1,3);
